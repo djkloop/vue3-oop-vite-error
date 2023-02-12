@@ -1,5 +1,5 @@
 import { Injectable } from 'injection-js'
-import type { RouterService } from './router.service'
+import { RouterService } from '@/router/router.service'
 import { routes } from "@/router/routes"
 
 @Injectable()

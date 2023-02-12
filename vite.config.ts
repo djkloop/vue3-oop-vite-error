@@ -1,11 +1,12 @@
 import { fileURLToPath, URL } from 'node:url'
 
-import { defineConfig } from 'vite'
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
+import vue from "@vitejs/plugin-vue"
 import vueJsx from '@vue3-oop/plugin-vue-jsx'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vueJsx()],
+  plugins: [vue(), vueJsx(), splitVendorChunkPlugin()],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
